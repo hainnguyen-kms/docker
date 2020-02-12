@@ -16,3 +16,8 @@ COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY ${DEPENDENCY}/META-INF /app/META-INF
 COPY ${DEPENDENCY}/BOOT-INF/classes /app
 ENTRYPOINT ["java","-cp","app:app/lib/*","demo.DemoApplication"]
+
+CMD ["mvnw", "package"]
+CMD ["docker", "build", "-t", "haingod/test", "."]
+CMD ["mvnw", "com.google.cloud.tools:jib-maven-plugin:dockerBuild", "-Dimage=haingod/test"]
+CMD ["mvnw", "com.google.cloud.tools:jib-maven-plugin:build", "-Dimage=haingod/test"]
