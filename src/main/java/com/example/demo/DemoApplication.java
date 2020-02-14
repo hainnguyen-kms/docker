@@ -18,7 +18,7 @@ public class DemoApplication implements CommandLineRunner {
 	@Override
 	public void run(String ...args) {
 		initTable();
-		System.out.println("done");
+		System.out.println("done szzxzcxzc");
 	}
 
 	private void initTable() {
